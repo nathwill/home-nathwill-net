@@ -1,0 +1,5 @@
+{
+  "id": "ubuntu",
+  "action": "remove",
+  "comment": "no default user."
+}

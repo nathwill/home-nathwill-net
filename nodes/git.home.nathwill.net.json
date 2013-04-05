@@ -1,18 +1,3 @@
 {
-  "name": "git.home.nathwill.net",
-  "chef_environment": "_default",
-  "json_class": "Chef::Node",
-  "automatic": {
-  },
-  "normal": {
-  },
-  "chef_type": "node",
-  "default": {
-  },
-  "override": {
-  },
-  "run_list": [
-    "role[base]","role[git]"
-  ]
+  "run_list": ["role[base]","role[git]"]
 }
-

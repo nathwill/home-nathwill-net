@@ -29,5 +29,4 @@ run_list [
   "recipe[sudo]",
   "recipe[apt]",
   "recipe[fail2ban]",
-  "recipe[munin::client]"
 ]

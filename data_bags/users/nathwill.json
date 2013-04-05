@@ -1,6 +1,7 @@
 {
   "id": "nathwill",
   "uid": 2001,
+  "groups": ["sysadmin", "devops"],
   "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqxILZLloEpzI6lAfn8HaELOTFW3n+DnipJgW4iN/L56ebc7bon5FOu6d0aLc5b2i4ECCCGLdgj+WOLz1Gv2qN2QQGx5K+4VDK1q9+V8dGo5Jh0MK2DLcrSECW+2EDwurZdVu+ORwVGhDdKMcb112xAOOyNWzEB44A18GxwPDvVjgEuIf21RSnziqlRV0gpQbU4f3b76wID2GOzS6+AptakujFXuRqpxEWEBlPLm0XvhHAim81u9ENEPcit7WS7IuH98CXZL/0vZeGw6GJ6Ow/smr3OjBqNjGm+D8AKVwPtU498A/BgW1+3GA4eYI8Zp1peKSyML+oikUV13D55i3D Nathan Williams",
   "shell": "\/bin\/bash",
   "comment": "that guy",

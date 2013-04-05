@@ -1,0 +1,14 @@
+{
+  "id": "shares",
+  "shares": {
+    "export": {
+      "comment": "Media",
+      "path": "/srv/data/media",
+      "guest ok": "yes",
+      "printable": "no",
+      "write list": ["nathwill"],
+      "create mask": "0664",
+      "directory mask": "0775"
+    }
+  }
+}

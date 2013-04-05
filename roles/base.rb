@@ -28,5 +28,6 @@ run_list [
   "recipe[user::data_bag]",
   "recipe[sudo]",
   "recipe[apt]",
+  "recipe[fail2ban]",
   "recipe[munin::client]"
 ]

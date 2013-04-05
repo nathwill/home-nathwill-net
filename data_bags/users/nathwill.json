@@ -9,5 +9,6 @@
     "email": "nath.e.will@gmail.com"
   },
   "htpasswd": "{SHA}QbSjJpbFg7frpsLnzCSXvSteSCQ=",
+  "smbpasswd": "media",
   "openid": "https://launchpad.net/~nathwill"
 }

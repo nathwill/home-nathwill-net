@@ -21,6 +21,13 @@ default_attributes(
         'requiretty'
       ],
     },
+  },
+  'openssh' => {
+    'server'=> {
+      'password_authentication' => 'no',
+      'login_grace_time' => '1m',
+      'permit_root_login'=> 'no'
+    }
   }
 )
 
@@ -29,4 +36,5 @@ run_list [
   "recipe[sudo]",
   "recipe[apt]",
   "recipe[fail2ban]",
+  "recipe[openssh]"
 ]

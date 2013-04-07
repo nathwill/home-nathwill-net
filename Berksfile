@@ -12,4 +12,6 @@ cookbook 'samba', :git => 'git://github.com/opscode-cookbooks/samba.git'
 cookbook 'transmission', :git => 'git://github.com/opscode-cookbooks/transmission.git'
 
 # site cookbooks
-
+cookbook 'ipv6tunnel', :path => 'site-cookbooks/ipv6tunnel'
+cookbook 'cups', :path => 'site-cookbooks/cups'
+cookbook 'radvd', :path => 'site-cookbooks/radvd'

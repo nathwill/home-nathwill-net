@@ -1,4 +1,4 @@
-name "monitoring"
+name "monitor"
 description "the monitoring server"
 
 default_attributes(

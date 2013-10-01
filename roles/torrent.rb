@@ -1,6 +1,5 @@
-name "torrent"
-description "the torrent server"
+name 'torrent'
 
-run_list [
-  "recipe[transmission]"
-]
+run_list %w{
+  recipe[transmission]
+}

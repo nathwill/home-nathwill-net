@@ -1,6 +1,5 @@
-name "web"
-description "the web server"
+name 'web'
 
-run_list [
-  "recipe[nginx]",
-]
+run_list %w{
+  recipe[nginx]
+}

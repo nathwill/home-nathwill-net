@@ -1,6 +1,5 @@
-name "print"
-description "the print server"
+name 'print'
 
-run_list [
-  "recipe[cups]"
-]
+run_list %w{
+  recipe[cups]
+}

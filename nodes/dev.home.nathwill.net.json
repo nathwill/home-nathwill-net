@@ -1,4 +1,3 @@
 {
-  "mysql": { "bind_address": "127.0.0.1" },
-  "run_list": ["role[base]","role[web]","role[database]"]
+  "run_list": ["role[dev]"]
 }

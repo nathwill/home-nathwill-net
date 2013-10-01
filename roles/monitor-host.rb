@@ -1,4 +1,4 @@
-name "monitor"
+name "monitor-host"
 description "the monitoring server"
 
 default_attributes(
@@ -9,6 +9,6 @@ default_attributes(
   }
 )
 
-run_list [
-  "recipe[munin::server]"
-]
+run_list %w{
+  recipe[munin::server]
+}

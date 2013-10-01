@@ -1,31 +1,34 @@
 ---
-driver_plugin: vagrant
+driver_plugin: bluebox
+
+driver_config:
+  bluebox_customer_id: <%= ENV['BLUEBOX_CUSTOMER_ID'] %>
+  bluebox_api_key: <%= ENV['BLUEBOX_API_KEY'] %>
+  ssh_public_key: <%= File.expand_path('~/.ssh/id_rsa.pub') %>
+  ssh_key: <%= File.expand_path('~/.ssh/id_rsa') %>
+  require_chef_omnibus: true
+ 
 platforms:
-- name: ubuntu-12.04
+- name: sl-64
   driver_config:
-    box: opscode-ubuntu-12.04
-    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-ubuntu-12.04.box
-  run_list:
-  - recipe[apt]
-- name: ubuntu-10.04
-  driver_config:
-    box: opscode-ubuntu-10.04
-    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-ubuntu-10.04.box
-  run_list:
-  - recipe[apt]
-- name: centos-6.3
-  driver_config:
-    box: opscode-centos-6.3
-    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-centos-6.3.box
-  run_list:
-  - recipe[yum::epel]
-- name: centos-5.8
-  driver_config:
-    box: opscode-centos-5.8
-    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-centos-5.8.box
-  run_list:
-  - recipe[yum::epel]
+    image_id: 99b819c4-5b8c-45a2-848b-b57153f587ca
+
 suites:
-- name: default
-  run_list: []
-  attributes: {}
+- name: app_server
+  run_list:
+  - role[base]
+  - role[app]
+  attributes:
+    authorization:
+      sudo:
+        users: 
+        - kitchen
+- name: util_server
+  run_list:
+  - role[base]
+  - role[util]
+  attributes:
+    authorization:
+      sudo:
+        users: 
+        - kitchen

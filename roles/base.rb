@@ -1,5 +1,4 @@
-name "base"
-description "base configuration"
+name 'base'
 
 default_attributes(
   'users' => ['nathwill'],
@@ -24,17 +23,15 @@ default_attributes(
   },
   'openssh' => {
     'server'=> {
-      'password_authentication' => 'no',
       'login_grace_time' => '1m',
       'permit_root_login'=> 'no'
     }
   }
 )
 
-run_list [
-  "recipe[user::data_bag]",
-  "recipe[sudo]",
-  "recipe[apt]",
-  "recipe[fail2ban]",
-  "recipe[openssh]"
-]
+run_list %w{
+  recipe[user::data_bag]
+  recipe[sudo]
+  recipe[fail2ban]
+  recipe[openssh]
+}

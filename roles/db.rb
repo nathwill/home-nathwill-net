@@ -17,7 +17,7 @@ default_attributes(
       'hot_standby_feedback' => 'on',
     },
     'pg_hba' => [
-      {type: 'hostssl', db: 'all', user: 'all', addr: '0.0.0.0/0', method: 'password'},
+      {type: 'host', db: 'all', user: 'all', addr: '0.0.0.0/0', method: 'password'},
     ],
     'version' => '9.2',
     'dir' => '/srv/data/pgsql/9.2/data',
@@ -39,5 +39,4 @@ override_attributes(
 run_list %w{
   recipe[postgresql::server]
   recipe[postgresql::config_initdb]
-  recipe[postgresql::config_pgtune]
 }

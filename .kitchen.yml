@@ -1,20 +1,16 @@
 ---
-driver_plugin: bluebox
+driver_plugin: docker
 
-driver_config:
-  bluebox_customer_id: <%= ENV['BLUEBOX_CUSTOMER_ID'] %>
-  bluebox_api_key: <%= ENV['BLUEBOX_API_KEY'] %>
-  ssh_public_key: <%= File.expand_path('~/.ssh/id_rsa.pub') %>
-  ssh_key: <%= File.expand_path('~/.ssh/id_rsa') %>
-  require_chef_omnibus: true
- 
 platforms:
-- name: sl-64
+- name: centos-6.4
   driver_config:
-    image_id: 99b819c4-5b8c-45a2-848b-b57153f587ca
+    require_chef_omnibus: true
+    dns:
+    - 208.67.222.222
+    - 208.67.220.220
 
 suites:
-- name: app_server
+- name: dev
   run_list:
   - role[base]
   - role[app]
@@ -23,10 +19,19 @@ suites:
       sudo:
         users: 
         - kitchen
-- name: util_server
+- name: util
   run_list:
   - role[base]
   - role[util]
+  attributes:
+    authorization:
+      sudo:
+        users: 
+        - kitchen
+- name: media
+  run_list:
+  - role[base]
+  - role[media]
   attributes:
     authorization:
       sudo:

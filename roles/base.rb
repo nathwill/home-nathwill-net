@@ -30,8 +30,10 @@ default_attributes(
 )
 
 run_list %w{
-  recipe[user::data_bag]
   recipe[sudo]
   recipe[fail2ban]
   recipe[openssh]
+  role[log-client]
+  role[monitor-client]
+  recipe[home-nathwill-net::default]
 }

@@ -4,7 +4,10 @@ driver_plugin: docker
 platforms:
 - name: centos-6.4
   driver_config:
+    image: centos:6.4
+    platform: centos
     require_chef_omnibus: true
+    use_sudo: false
     dns:
     - 208.67.222.222
     - 208.67.220.220

@@ -1,6 +1,7 @@
 boxes = [
-  { :name => :app,   :roles => ['base', 'app'] },
-  { :name => :db,    :roles => ['base', 'db' ] }
+  { :name => :dev,   :roles => ['base', 'dev']   },
+  { :name => :util,  :roles => ['base', 'util']  },
+  { :name => :media, :roles => ['base', 'media'] },
 ]
  
 Vagrant.configure("2") do |config|

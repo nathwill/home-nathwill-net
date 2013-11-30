@@ -10,7 +10,7 @@ driver_config:
 
 settings:
   parallel: true
-  destroy: never
+  destroy: passing
 
 platforms:
 - name: centos-6.4

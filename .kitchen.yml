@@ -16,9 +16,16 @@ platforms:
 - name: centos-6.4
 
 suites:
-- name: dev
+- name: base
   run_list:
   - role[base]
+  attributes:
+    authorization:
+      sudo:
+        users:
+        - kitchen
+- name: dev
+  run_list:
   - role[dev]
   attributes:
     authorization:
@@ -27,7 +34,6 @@ suites:
         - kitchen
 - name: util
   run_list:
-  - role[base]
   - role[util]
   attributes:
     authorization:
@@ -36,7 +42,6 @@ suites:
         - kitchen
 - name: media
   run_list:
-  - role[base]
   - role[media]
   attributes:
     authorization:

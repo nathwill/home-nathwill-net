@@ -1,3 +1,3 @@
 {
-  "run_list":["role[util]"]
+  "run_list":["role[base]","role[util]"]
 }

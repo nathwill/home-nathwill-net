@@ -1,14 +1,19 @@
 ---
 driver_plugin: docker
 
+driver_config:
+  require_chef_omnibus: latest
+  use_sudo: false
+  dns:
+  - 208.67.222.222
+  - 208.67.220.220
+
+settings:
+  parallel: true
+  destroy: never
+
 platforms:
 - name: centos-6.4
-  driver_config:
-    require_chef_omnibus: true
-    use_sudo: false
-    dns:
-    - 208.67.222.222
-    - 208.67.220.220
 
 suites:
 - name: dev

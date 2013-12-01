@@ -9,8 +9,6 @@ end
 
 describe file('/etc/ssh/sshd_config') do
   it { should be_file }
-  it { should contain "PermitRootLogin no"
-  it { should contain "PubKeyAuthentication yes"
 end
 
 describe service('sshd') do

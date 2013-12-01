@@ -19,8 +19,8 @@ default_attributes(
     'pg_hba' => [
       {type: 'host', db: 'all', user: 'all', addr: '0.0.0.0/0', method: 'password'},
     ],
-    'version' => '9.3',
-    'dir' => '/srv/data/pgsql/9.3/data',
+    'version' => '9.2',
+    'dir' => '/srv/data/pgsql/9.2/data',
     'enable_pgdg_yum' => true,
     'password' => { 'postgres' => 'changeme' },
     'config_pgtune' => {
@@ -31,9 +31,9 @@ default_attributes(
 
 override_attributes(
   'postgresql' => {
-    'client' => { 'packages' => %w{postgresql93} },
-    'server' => { 'packages' => %w{postgresql93-server postgresql93-devel postgresql93-contrib},
-                  'service_name' => 'postgresql-9.3' },
+    'client' => { 'packages' => %w{postgresql92} },
+    'server' => { 'packages' => %w{postgresql92-server postgresql92-devel postgresql92-contrib},
+                  'service_name' => 'postgresql-9.2' },
   },
 )
 run_list %w{
